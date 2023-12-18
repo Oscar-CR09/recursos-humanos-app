@@ -1,9 +1,20 @@
 import React from 'react'
 
 export default function ListadoEmpleados() {
+
+    const urlBase="http://localhost:8080/rh-app/empleados"
+
+    const[empleados, setEmpleados] = useState([]);
+
+    useEffect(()=>{
+        cargarEmpleados();
+    },[]);
+
+    const cargarEmpleados = await axios
+
   return (
 
-    
+
     <div className='container'>
         <div className='container text-center ' style={{margin: "30px"}}>
             <h3>Sistemas de Recursos Humanos</h3>

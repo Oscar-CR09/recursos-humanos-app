@@ -1,5 +1,5 @@
 import ListadoEmpleados from "./empleados/ListadoEmpleados";
-
+import navegacion from "./plantilla/navegacion";
 function App() {
   return (
     <div className="container">

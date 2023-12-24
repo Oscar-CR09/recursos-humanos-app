@@ -2,7 +2,14 @@ import ListadoEmpleados from "./empleados/ListadoEmpleados";
 
 function App() {
   return (
-    <ListadoEmpleados/>
+    <div className="container">
+
+      <navegacion/>
+      <ListadoEmpleados/>
+
+    </div>
+
+
   );
 }
 

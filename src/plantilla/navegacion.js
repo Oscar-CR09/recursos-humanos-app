@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function navegacion() {
+export default function Navegacion() {
     return (
-        <div classNameName='container'>
+        <div className='container'>
 
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div className="container-fluid">
@@ -16,7 +17,7 @@ export default function navegacion() {
                                 <a className="nav-link active" aria-current="page" href="/">Inicio</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/agregar">Agregar Empleado</a>
+                                <Link className="nav-link" to="/agregar">Agregar Empleado</Link>
                             </li>
 
                         </ul>

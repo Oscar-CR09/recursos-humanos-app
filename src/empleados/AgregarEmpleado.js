@@ -42,18 +42,18 @@ export default function AgregarEmpleado() {
 
             <form onSubmit={(e)=> onSubmit(e)}>
                 <div className="mb-3">
-                    <label htmlFor="nombre" className="htmlform-label">Nombre</label>
-                    <input type="text" className="htmlform-control" id="nombre" name='nombre' required={true} value={nombre} onChange={(e)=>onInputChange(e)}/>
+                    <label htmlFor="nombre" className="form-label">Nombre</label>
+                    <input type="text" className="form-control" id="nombre" name='nombre' required={true} value={nombre} onChange={(e)=>onInputChange(e)}/>
                 
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="departamento" className="htmlform-label">Departamento</label>
-                    <input type="text" className="htmlform-control" id="departamento" name='departamento' value={departamento} onChange={(e)=>onInputChange(e)}/>
+                    <label htmlFor="departamento" className="form-label">Departamento</label>
+                    <input type="text" className="form-control" id="departamento" name='departamento' value={departamento} onChange={(e)=>onInputChange(e)}/>
                 </div>
 
                 <div className="mb-3">
-                    <label htmlFor="sueldo" className="htmlform-label">Sueldo</label>
-                    <input type="number" step='any' className="htmlform-control" id="sueldo" name='sueldo' value={sueldo} onChange={(e)=>onInputChange(e)}/>
+                    <label htmlFor="sueldo" className="form-label">Sueldo</label>
+                    <input type="number" step='any' className="form-control" id="sueldo" name='sueldo' value={sueldo} onChange={(e)=>onInputChange(e)}/>
                 </div>
               
                 <div className='text-center'>

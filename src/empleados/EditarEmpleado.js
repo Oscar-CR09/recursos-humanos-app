@@ -21,12 +21,13 @@ export default function EditarEmpleado() {
     useEffect(()=>{
         cargarEmpleado();
 
-    })
+    },[])
+    
 
     const cargarEmpleado = async() => {
         const resultado = await axios.get(`${urlBase}/${id}`)
         setEmpleado(resultado.data);
-        
+
     }
 
     const onInputChange = (e) =>{

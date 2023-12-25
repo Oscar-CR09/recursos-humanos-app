@@ -1,11 +1,14 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 
-export default function AgregarEmpleado() {
+export default function EditarEmpleado() {
+    const urlBase = "html://localhost:8080/rh-app/empleados";
 
     let navegacion = useNavigate();
+
+    const {id} =useParams();
 
     const [empleado, setEmpleado] = useState({
         nombre:"",
@@ -15,6 +18,16 @@ export default function AgregarEmpleado() {
 
     const{nombre,departamento,sueldo} = empleado
 
+    useEffect(()=>{
+        cargarEmpleado();
+
+    })
+
+    const cargarEmpleado = async() => {
+        const resultado = await axios.get(`${urlBase}/${id}`)
+        setEmpleado(resultado.data);
+        
+    }
 
     const onInputChange = (e) =>{
         //spread operator ... )(expandir los atributos)
@@ -24,7 +37,6 @@ export default function AgregarEmpleado() {
 
     const onSubmit = async ( e ) =>{
         e.preventDefault();
-        const urlBase = "html://localhost:8080/rh-app/empleados";
         await axios.post(urlBase, empleado);
         // Redirigimos a la pagina de inicio
 
@@ -37,7 +49,7 @@ export default function AgregarEmpleado() {
     <div className='container'>
         <div className='container text-center' style={{margin:"30px"}}>
             <h3>
-                Agregar Empleado
+               Editar Empleado 
             </h3>
 
             <form onSubmit={(e)=> onSubmit(e)}>
@@ -57,7 +69,7 @@ export default function AgregarEmpleado() {
                 </div>
               
                 <div className='text-center'>
-                    <button type="submit" className="btn btn-warning btn-sm me-3 ">Agregar</button>
+                    <button type="submit" className="btn btn-warning btn-sm me-3 ">Guardar</button>
                     <a href='/' className='btn btn-danger btn-sm me-3'>Regresar</a>
                 </div>
                 
